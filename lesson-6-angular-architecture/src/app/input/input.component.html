@@ -1,0 +1,14 @@
+<input
+  type="text"
+  [(ngModel)]="defaultName"
+  value={{defaultName}}>
+
+<button type="submit"
+  [disabled]="!isValidForm()"
+  (click) = "handleClick()">
+    Change name
+</button>
+
+<p class="logName">{{defaultName}}</p>
+
+<hr>

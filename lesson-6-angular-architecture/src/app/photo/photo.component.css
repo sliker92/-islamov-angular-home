@@ -1,0 +1,39 @@
+span {
+  display: block;
+  color: green;
+}
+
+img {
+  margin-bottom: 2rem;
+}
+
+button {
+  margin-left: .3rem;
+  margin-top: 1rem;
+  width: 80%;
+  height: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: .03rem;
+  border: 2px solid lightgrey;
+  background-color: rgba(135, 206, 250, 0.473);
+}
+
+div {
+  text-align: center;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: .03rem;
+  display: none;
+}
+
+.description.show {
+  display: block;
+}
+
+.white {
+  border: 2px solid lightgrey;
+  color: white;
+}
