@@ -1,0 +1,15 @@
+<app-timer-control (edit)="handleEdit($event)"></app-timer-control>
+
+<div class="numbers_wrapper">
+  <div class="even-numbers">
+    <app-even *ngFor="let currentNumber of arrayNumber"
+    [currentNumber]= 'currentNumber'>
+    </app-even>
+  </div>
+  
+  <div class="odd-numbers">
+    <app-odd *ngFor="let currentNumber of arrayNumber"
+    [currentNumber]= 'currentNumber'>
+    </app-odd>
+  </div>
+</div>
