@@ -1,0 +1,16 @@
+.alert {
+  padding: 0rem 1rem;
+  border: 1px solid transparent;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+
+hr {
+  margin-bottom: 3rem
+}
+
+.alert, input, button, .white {
+  border-radius: .25rem;
+}

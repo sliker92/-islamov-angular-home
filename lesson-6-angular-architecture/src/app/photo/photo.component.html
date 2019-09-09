@@ -1,0 +1,26 @@
+<section>
+  <div>
+    <img src="https://s3.amazonaws.com/noupe/trans/cdn_smash/wp-content/uploads/2009/10/81.jpg" alt="flying man">
+
+    <button (click)="showPhotoDescr()">
+      Show description
+    </button>
+
+    <div class = "description"
+      [class.show]="menuShowed"
+      [ngClass]="{
+        'white': incr !== 0 && incr % 5 === 0
+      }"
+      [ngStyle]="{
+        backgroundColor: (incr !== 0 && incr % 5 === 0 ? 'lightblue' : 'white')
+      }">
+
+      <span>{{incr}}</span>
+      <span>{{currentTime}}</span>
+
+      <p>
+        Swiss pilot Yves Rossy, the world’s first man to fly with a jet-powered fixed-wing apparatus strapped to his back, flies during his first official demonstration, on May 14,2008 above Bex, Switzerland.
+      </p>
+    </div>
+  </div>
+</section>
