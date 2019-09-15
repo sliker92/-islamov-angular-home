@@ -1,0 +1,90 @@
+<div class="form_wrapper">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value, form.valid)">
+    <div class="form_field">
+      <div ngModelGroup="userData"
+           #userData="ngModelGroup">
+        <div>
+          <input
+            #nameInput
+            type="text"
+            name="userName"
+            required
+            minlength="2"
+            [ngModel]="userExample?.userData.userName"
+            placeholder="User name *">
+        </div>
+        <div *ngIf="!userData.valid && userData.touched" class="warning">
+          <p>Wrong user name!!!</p>
+        </div>
+
+        <div>
+          <input
+            type="text"
+            name="userEmail"
+            required
+            minlength="2"
+            [ngModel]="userExample?.userData.email"
+            placeholder="User e-mail *">
+        </div>
+        <div *ngIf="!userData.valid && userData.touched" class="warning">
+          <p>Invalid e-mail!!!</p>
+        </div>
+
+        <button type="button" (click)=proposeUser(nameInput)>
+          Propose user
+        </button>
+      </div>
+
+      <div>
+        <label>Secret question:</label>
+        <select
+          name="secretQuestion"
+          [ngModel]="userExample?.secretQuestion">
+          <option
+            *ngFor="let question of userExample.secretQuestion;"
+            [value]="question"
+            [selected]="question">
+            {{ question }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <textarea
+          #answerQuestion="ngModel"
+          required
+          name="answerQuestion"
+          rows="3"
+          cols="30"
+          [ngModel]="userExample?.answerQuestion">
+        </textarea>
+        <div *ngIf="!answerQuestion.valid && answerQuestion.touched" class="warning">
+          <p>Don't forget about secret question!!!</p>
+        </div>
+        <p>Answer:{{answerQuestion.value}}</p>
+      </div>
+
+      <div *ngFor="let gender of userExample.gender">
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            ngModel
+            [value]="gender"
+            required>
+          {{ gender }}
+        </label>
+      </div>
+
+      <button type="submit" [disabled]="!form.valid">
+        Submit
+      </button>
+      <div *ngIf="form.invalid && form.touched" class="warning">
+        <p>Invalid form</p>
+      </div>
+    </div>
+  </form>
+</div>
+
+<hr>
+{{ form.value | json }}
