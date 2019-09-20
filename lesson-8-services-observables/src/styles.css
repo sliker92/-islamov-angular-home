@@ -1,0 +1,39 @@
+button {
+  margin-left: .3rem;
+  width: 45%;
+  height: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: .03rem;
+  border: 2px solid lightgrey;
+  background-color: rgba(135, 206, 250, 0.473);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(172, 221, 252);
+}
+
+div {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  margin-bottom: .2rem;
+}
+
+.list-item-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  width: 8rem;
+  line-height: 2.3rem;
+  background: lightgray;
+  border: 1px solid gray;
+}
+
+h3 {
+    font-size: 1.5rem;
+}

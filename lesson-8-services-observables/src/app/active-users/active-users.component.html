@@ -1,0 +1,13 @@
+<h3>Active users</h3>
+<ul>
+  <ng-template ngFor let-user let-index="index" [ngForOf]="users">
+    <ng-template [ngIf]="user.isActive === true">
+      <li>
+        <span class="list-item-name">{{user.name}}</span>
+        <button (click)="changeToInactiveStatus(index)">Set to Inactive</button>
+      </li>
+    </ng-template>
+  </ng-template>
+</ul>
+
+<hr>
