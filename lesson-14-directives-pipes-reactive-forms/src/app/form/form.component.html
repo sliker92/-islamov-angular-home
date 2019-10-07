@@ -1,0 +1,52 @@
+<div class="form_wrapper">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="input_wrapper">
+        <input
+          type="text"
+          placeholder="Project Name"
+          formControlName="project">
+          <div
+            class="error" 
+            *ngIf="required('project')">
+            Project Name is required.
+          </div>
+          <div
+            class="error" 
+            *ngIf="form.get('project').checkProjectName">
+            This name is blocked.
+          </div>
+
+        <input
+          type="email"
+          placeholder="E-mail"
+          formControlName="email">
+          <div
+            class="error" 
+            *ngIf="required('email')">
+            E-mail is required.
+          </div>
+          <div
+            class="error" 
+            *ngIf="form.get('email').invalid && form.get('email').touched">
+            Wrong E-mail.
+          </div>
+      </div>
+
+      <div class="select_wrapper">
+        <select formControlName="status">
+          <option value="">Project Status Dropdown</option>
+          <option *ngFor="let status of statuses" [ngValue]="status">{{status}}</option>
+        </select>
+      </div>
+
+      <div class="buttons_wrapper">
+        <button
+          type="submit"
+          [disabled]="form.invalid">
+          Order stock
+        </button>
+      </div>
+
+      <pre>{{ form.value | json }}</pre>
+  </form>
+</div>
