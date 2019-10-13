@@ -1,0 +1,38 @@
+.log-item-wrapper {
+  padding: .2rem 1rem;
+}
+
+li {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.close::after {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 17px;
+  background-color: black;
+  transform: rotate(45deg);
+  right: 1.5%;
+  top: 6%;
+}
+
+.close::before {
+  position: absolute;
+  content: '';
+  width: 17px;
+  height: 2px;
+  background-color: black;
+  transform: rotate(45deg);
+  bottom: 46.5%;
+  right: .1%;
+}
