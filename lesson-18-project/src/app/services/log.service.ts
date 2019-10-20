@@ -20,12 +20,16 @@ export class LogService {
   stateClear = this.stateSource.asObservable();
 
   constructor(private afs: AngularFirestore) {
-    this.logsCollection = this.afs.collection('logs', ref => ref.orderBy('text', 'asc'));
+    this.logsCollection = this.afs.collection('logs', ref => ref.orderBy('date', 'desc'));
   }
 
   getLogs(): Observable<Log[]> {
     return this.logs = this.logsCollection.snapshotChanges().pipe(
       map(changes => {
+        // console.log(DocumentChangeAction);
+        // changes.sort(((a, b) => {
+        //   return b.payload.doc.data().date.seconds - a.payload.doc.data().date.seconds.log
+        // }));
         return changes.map(action => {
           const data = action.payload.doc.data() as Log;
           data.id = action.payload.doc.id;
