@@ -1,0 +1,9 @@
+<div class="form_wrapper">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" name="text" [(ngModel)]="text" class="form-control" placeholder="Add a log...">
+    </div>
+    <button type="submit" class="btn-sbmt" [disabled]="!this.text">Add Log</button>
+    <button (click)="clear()" type="button" class="btn-clr" [hidden]=!this.text>Clear</button>
+  </form>
+</div>
